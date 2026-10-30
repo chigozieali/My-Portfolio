@@ -58,26 +58,12 @@ It isn't a static page. Everything on it, from the headline and "Right now" stat
 
 ## 🗺️ Architecture
 
+<p align="center">
+  <img src="doc/diagram.svg" alt="Architecture diagram of csalioha.com.ng" width="900">
+</p>
+
 ```
-            ┌──────────────────────┐
- Visitor ──▶│  csalioha.com.ng     │  (custom domain + HTTPS)
-            └──────────┬───────────┘
-                       │ DNS → Vercel
-                       ▼
-            ┌──────────────────────┐
-            │   Next.js on Vercel  │◀── GitHub push (auto deploy)
-            └──────────┬───────────┘
-                       │ reads / writes
-                       ▼
-            ┌──────────────────────┐
-            │      PostgreSQL      │  site content & settings
-            └──────────────────────┘
-                       ▲
-                       │ edits content
-            ┌──────────┴───────────┐      ┌──────────────────────┐
-   Me ─────▶│    Site Settings     │─────▶│  AI Content Assistant │
-            │ (protected admin)    │◀─────│  write · rewrite · polish │
-            └──────────────────────┘      └──────────────────────┘
+
 ```
 
 ---
